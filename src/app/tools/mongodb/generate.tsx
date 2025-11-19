@@ -11,7 +11,7 @@ export default function ObjectGenerateTab() {
   const [genObjId, setGenObjId] = useState('');
 
   const generateObjectIdFromDate = (d: Date) => {
-    // timestamp (4 bytes) + 16 hex chars random = 24 chars
+    // timestamp (4 bytes) + 16 hex padding chars = 24 chars
     const seconds = Math.floor(Date.UTC(
       d.getUTCFullYear(),
       d.getUTCMonth(),
@@ -22,9 +22,7 @@ export default function ObjectGenerateTab() {
       d.getUTCMilliseconds()
     ) / 1000);
     const tsHex = seconds.toString(16).padStart(8, '0');
-    let rand = '';
-    for (let i = 0; i < 16; i++) rand += Math.floor(Math.random() * 16).toString(16);
-    return (tsHex + rand).toLowerCase();
+    return (tsHex + '0000000000000000').toLowerCase();
   }
 
   return (
