@@ -1,18 +1,11 @@
 "use client";
 
 import React from 'react';
-import Box from '@mui/material/Box';
-import Typography from '@mui/material/Typography';
-import { useLang } from './LanguageProvider';
-import { Link } from '@mui/material';
+import { Box, Link, Typography } from '@mui/material';
 
 export const FOOTER_HEIGHT = 56;
 
 export default function Footer() {
-  const { t } = useLang();
-  const raw = t('Footer');
-  const text = raw.replace('{year}', String(new Date().getFullYear()));
-
   return (
     <Box
       component="footer"
@@ -31,7 +24,7 @@ export default function Footer() {
       }}
     >
       <Typography variant="body2" color="text.secondary">
-        {text}
+        © {new Date().getFullYear()} <Link href="https://ghosind.com">ghosind.com</Link>. All rights reserved.{' '}
       </Typography>
     </Box>
   );

@@ -1,7 +1,6 @@
 "use client";
 
-import React from 'react';
-import { Box, List, ListItemButton, ListItemText, Typography, Paper } from '@mui/material';
+import { Box, List, ListItemButton, ListItemText, Paper } from '@mui/material';
 import Link from 'next/link';
 import { useLang } from '@/components/LanguageProvider';
 import { tools } from '@/constants/tools';
