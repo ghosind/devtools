@@ -26,6 +26,26 @@
         "TimeOutputUTC": "Output (UTC)",
         "TimeOutputLocal": "Output (Local)"
       }
+    },
+    "MongoDBObjectID": {
+      "Name": "MongoDB ObjectID",
+      "Description": "MongoDB ObjectID tools, supporting conversion between ObjectID and corresponding time.",
+      "Tabs": {
+        "Extract": "Extract",
+        "Generate": "Generate"
+      },
+      "Extract": {
+        "Title": "ObjectID to Time",
+        "Input": "ObjectID",
+        "OutputUTC": "Output (UTC)",
+        "OutputLocal": "Output (Local)",
+        "OutputTimestamp": "Timestamp (s)"
+      },
+      "Generate": {
+        "Title": "UTC Datetime to ObjectID",
+        "Input": "Datetime (UTC)",
+        "Output": "Output (ObjectID)"
+      }
     }
   },
   "Theme": {

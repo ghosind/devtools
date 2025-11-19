@@ -20,7 +20,12 @@ export default function TimestampTab() {
       const n = Number(ts);
       if (Number.isNaN(n)) throw new Error('Invalid timestamp');
       const date = new Date(n >= 1e12 ? n : n * 1000);
-      return { utc: formatDate(date, true), local: formatDate(date, false) };
+      const timezone = date.getTimezoneOffset() / -60;
+
+      return {
+        utc: formatDate(date, true),
+        local: `${formatDate(date, false)} (GMT${timezone >= 0 ? '+' : ''}${timezone})`,
+      };
     } catch (e) {
       const msg = String(e);
       return { utc: msg, local: msg };
