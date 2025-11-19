@@ -1,6 +1,7 @@
 import '@/styles/globals.css';
 import Providers from '@/components/Providers';
 import Layout from '@/components/Layout';
+import { FOOTER_HEIGHT } from '@/constants/ui';
 
 export const metadata = {
   title: 'DevTools',
@@ -19,7 +20,7 @@ export const metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
-      <body>
+      <body style={{ paddingBottom: `calc(${FOOTER_HEIGHT}px + env(safe-area-inset-bottom))` }}>
         <Providers>
           <Layout>
             {children}

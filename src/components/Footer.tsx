@@ -2,8 +2,7 @@
 
 import React from 'react';
 import { Box, Link, Typography } from '@mui/material';
-
-export const FOOTER_HEIGHT = 56;
+import { FOOTER_HEIGHT } from '@/constants/ui';
 
 export default function Footer() {
   return (
