@@ -1,4 +1,6 @@
 {
+  "Home": "Home",
+  "Footer": "© {year} DevTools",
   "Encode": "Encode",
   "Decode": "Decode",
   "Input": "Input",

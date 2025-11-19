@@ -1,4 +1,6 @@
 {
+  "Home": "首页",
+  "Footer": "© {year} DevTools",
   "Encode": "编码",
   "Decode": "解码",
   "Input": "输入",

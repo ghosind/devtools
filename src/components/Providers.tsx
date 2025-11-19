@@ -3,6 +3,7 @@
 import React from 'react';
 import { ThemeProvider, createTheme, CssBaseline } from '@mui/material';
 import LanguageProvider from './LanguageProvider';
+import GoogleAnalytics from './GoogleAnalytics';
 
 const theme = createTheme({
   palette: {
@@ -15,6 +16,7 @@ export default function Providers({ children }: { children: React.ReactNode }) {
     <LanguageProvider>
       <ThemeProvider theme={theme}>
         <CssBaseline />
+        <GoogleAnalytics />
         {children}
       </ThemeProvider>
     </LanguageProvider>
