@@ -13,7 +13,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
         <Toolbar>
           <Typography variant="h6" style={{ flex: 1 }}>
             <Link href="/" color="inherit" underline="none">
-              {t('DevTools')}
+              DevTools
             </Link>
           </Typography>
           <Select

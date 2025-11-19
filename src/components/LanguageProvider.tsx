@@ -4,11 +4,13 @@ import React, { createContext, useContext, useEffect, useState } from 'react';
 import en from '@/translations/en.json';
 import zh from '@/translations/zh.json';
 
-type Messages = Record<string, string>;
+interface Messages {
+  [key: string]: string | Messages;
+}
 
 const langs: Record<string, Messages> = {
-  en,
-  zh
+  en: en as unknown as Messages,
+  zh: zh as unknown as Messages,
 };
 
 type ContextType = {
@@ -40,7 +42,19 @@ export default function LanguageProvider({ children }: { children: React.ReactNo
   }, [locale]);
 
   const t = (key: string) => {
-    return langs[locale]?.[key] ?? key;
+    // support dot-separated nested keys, e.g. "home.title"
+    const lookup = (obj: Messages | undefined, path: string): string | undefined => {
+      if (!obj) return undefined;
+      const parts = path.split('.');
+      let cur: any = obj;
+      for (const p of parts) {
+        if (cur && typeof cur === 'object' && p in cur) cur = cur[p];
+        else return undefined;
+      }
+      return typeof cur === 'string' ? cur : undefined;
+    };
+
+    return lookup(langs[locale], key) ?? key;
   };
 
   return <LangContext.Provider value={{ locale, setLocale, t }}>{children}</LangContext.Provider>;

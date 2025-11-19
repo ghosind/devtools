@@ -1,9 +1,15 @@
 {
-  "DevTools": "DevTools",
   "Encode": "Encode",
   "Decode": "Decode",
   "Input": "Input",
   "Output": "Output",
   "Run": "Run",
-  "Base64": "Base64"
+  "Copy": "Copy",
+  "Copied": "Copied",
+  "Tools": {
+    "Base64": {
+      "Name": "Base64 Encoder/Decoder",
+      "Description": "Encode and decode text using Base64 encoding scheme."
+    }
+  }
 }

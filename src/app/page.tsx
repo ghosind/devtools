@@ -11,15 +11,11 @@ export default function Home() {
 
   return (
     <Box sx={{ maxWidth: 800, margin: '0 auto' }}>
-      <Typography variant="h4" sx={{ mb: 2 }}>
-        {t('DevTools')}
-      </Typography>
-
       <Paper>
         <List>
           {tools.map((tool) => (
             <ListItemButton key={tool.key} component={Link} href={tool.href}>
-              <ListItemText primary={t(tool.title)} secondary={tool.description} />
+              <ListItemText primary={t(tool.title)} secondary={t(tool.description)} />
             </ListItemButton>
           ))}
         </List>

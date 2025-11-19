@@ -1,9 +1,15 @@
 {
-  "DevTools": "开发工具",
   "Encode": "编码",
   "Decode": "解码",
   "Input": "输入",
   "Output": "输出",
   "Run": "执行",
-  "Base64": "Base64"
+  "Copy": "复制",
+  "Copied": "已复制",
+  "Tools": {
+    "Base64": {
+      "Name": "Base64 编码/解码器",
+      "Description": "使用 Base64 编码方案对文本进行编码和解码。"
+    }
+  }
 }
