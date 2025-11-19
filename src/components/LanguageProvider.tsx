@@ -3,6 +3,7 @@
 import React, { createContext, useContext, useEffect, useState } from 'react';
 import en from '@/translations/en.json';
 import zh from '@/translations/zh.json';
+import fr from '@/translations/fr.json';
 
 interface Messages {
   [key: string]: string | Messages;
@@ -11,6 +12,7 @@ interface Messages {
 const langs: Record<string, Messages> = {
   en: en as unknown as Messages,
   zh: zh as unknown as Messages,
+  fr: fr as unknown as Messages,
 };
 
 type ContextType = {

@@ -1,0 +1,20 @@
+{
+  "Home": "Accueil",
+  "Encode": "Encoder",
+  "Decode": "Décoder",
+  "Input": "Entrée",
+  "Output": "Sortie",
+  "Run": "Exécuter",
+  "Copy": "Copier",
+  "Copied": "Copié",
+  "Tools": {
+    "Base64": {
+      "Name": "Encodeur/Décodeur Base64",
+      "Description": "Encoder et décoder du texte avec le schéma d'encodage Base64."
+    }
+  },
+  "Theme": {
+    "SwitchToLight": "Passer en mode clair",
+    "SwitchToDark": "Passer en mode sombre"
+  }
+}

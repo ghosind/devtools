@@ -12,5 +12,9 @@
       "Name": "Base64 编码/解码器",
       "Description": "使用 Base64 编码方案对文本进行编码和解码。"
     }
+  },
+  "Theme": {
+    "SwitchToLight": "切换到浅色模式",
+    "SwitchToDark": "切换到深色模式"
   }
 }

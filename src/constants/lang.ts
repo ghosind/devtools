@@ -4,4 +4,7 @@ export const langs = [{
 }, {
   code: 'zh',
   name: '中文'
+}, {
+  code: 'fr',
+  name: 'Français'
 }];

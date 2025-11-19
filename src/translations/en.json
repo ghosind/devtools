@@ -12,5 +12,9 @@
       "Name": "Base64 Encoder/Decoder",
       "Description": "Encode and decode text using Base64 encoding scheme."
     }
+  },
+  "Theme": {
+    "SwitchToLight": "Switch to light mode",
+    "SwitchToDark": "Switch to dark mode"
   }
 }
