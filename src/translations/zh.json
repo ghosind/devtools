@@ -11,10 +11,29 @@
     "Base64": {
       "Name": "Base64 编码/解码器",
       "Description": "使用 Base64 编码方案对文本进行编码和解码。"
+    },
+    "Time": {
+      "Name": "时间计算工具",
+      "Description": "时间计算工具，包括时间戳转换、日期计算等",
+      "Tabs": {
+        "Timestamp": "时间戳"
+      },
+      "Timestamp": {
+        "TimestampToHuman": "时间戳转为可读格式",
+        "HumanToTimestamp": "可读格式转为时间戳",
+        "TimestampInput": "时间戳（秒或毫秒）",
+        "ReadableInput": "日期时间（UTC）",
+        "TimeOutputUTC": "输出（UTC）",
+        "TimeOutputLocal": "输出（本地）"
+      }
     }
   },
   "Theme": {
     "SwitchToLight": "切换到浅色模式",
     "SwitchToDark": "切换到深色模式"
+  },
+  "DateTimePicker": {
+    "Ok": "确定",
+    "Cancel": "取消"
   }
 }

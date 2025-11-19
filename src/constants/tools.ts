@@ -5,4 +5,10 @@ export const tools = [
     description: 'Tools.Base64.Description',
     href: '/tools/base64'
   }
+  ,{
+    key: 'time',
+    title: 'Tools.Time.Name',
+    description: 'Tools.Time.Description',
+    href: '/tools/time'
+  }
 ];

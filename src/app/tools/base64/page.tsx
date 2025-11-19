@@ -3,7 +3,6 @@
 import React, { useState } from 'react';
 import { Box, TextField, Typography, Button, ToggleButtonGroup, ToggleButton } from '@mui/material';
 import { useLang } from '@/components/LanguageProvider';
-import { encodeBase64, decodeBase64 } from '@/utils/base64';
 import CopyButton from '@/components/CopyButton';
 
 export default function Base64Page() {
@@ -11,6 +10,22 @@ export default function Base64Page() {
   const [input, setInput] = useState('');
   const [output, setOutput] = useState('');
   const [mode, setMode] = useState<'encode' | 'decode'>('encode');
+
+  const encodeBase64 = (input: string): string => {
+    try {
+      return Buffer.from(input, 'utf8').toString('base64');
+    } catch (e) {
+      return String(e);
+    }
+  }
+
+  const decodeBase64 = (input: string): string => {
+    try {
+      return Buffer.from(input, 'base64').toString('utf8');
+    } catch (e) {
+      return String(e);
+    }
+  }
 
   function run() {
     try {

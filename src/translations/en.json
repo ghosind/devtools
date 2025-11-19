@@ -11,10 +11,29 @@
     "Base64": {
       "Name": "Base64 Encoder/Decoder",
       "Description": "Encode and decode text using Base64 encoding scheme."
+    },
+    "Time": {
+      "Name": "Time Calculation Tools",
+      "Description": "Time calculation tools including timestamp conversion, date calculations, and more.",
+      "Tabs": {
+        "Timestamp": "Timestamp"
+      },
+      "Timestamp": {
+        "TimestampToHuman": "Timestamp to Human-Readable",
+        "HumanToTimestamp": "Human-Readable to Timestamp",
+        "TimestampInput": "Timestamp (s or ms)",
+        "ReadableInput": "Datetime (UTC)",
+        "TimeOutputUTC": "Output (UTC)",
+        "TimeOutputLocal": "Output (Local)"
+      }
     }
   },
   "Theme": {
     "SwitchToLight": "Switch to light mode",
     "SwitchToDark": "Switch to dark mode"
+  },
+  "DateTimePicker": {
+    "Ok": "OK",
+    "Cancel": "Cancel"
   }
 }
