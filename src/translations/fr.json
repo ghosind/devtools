@@ -22,7 +22,8 @@
       "Name": "Outils de calcul du temps",
       "Description": "Outils de calcul du temps incluant la conversion de timestamps, les calculs de dates, et plus encore.",
       "Tabs": {
-        "Timestamp": "Timestamp"
+        "Timestamp": "Timestamp",
+        "DaysBetween": "Jours entre"
       },
       "Timestamp": {
         "TimestampToHuman": "Timestamp vers format lisible",
@@ -35,10 +36,18 @@
           "InvalidTimestamp": "Timestamp invalide : {msg}",
           "InvalidDate": "Date invalide"
         }
+      },
+      "DaysBetween": {
+        "Title": "Jours entre",
+        "Start": "Datetime de départ",
+        "End": "Datetime de fin",
+        "Result": "Différence",
+        "Clear": "Effacer",
+        "Days": "jours"
       }
     },
     "MongoDBObjectID": {
-      "Name": "ObjectID MongoDB",
+      "Name": "Outillage pour ObjectID MongoDB",
       "Description": "Outillage pour ObjectID MongoDB, supportant la conversion entre ObjectID et le temps correspondant.",
       "Tabs": {
         "Extract": "Extraire",

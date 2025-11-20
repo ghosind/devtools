@@ -22,7 +22,8 @@
       "Name": "Time Calculation Tools",
       "Description": "Time calculation tools including timestamp conversion, date calculations, and more.",
       "Tabs": {
-        "Timestamp": "Timestamp"
+        "Timestamp": "Timestamp",
+        "DaysBetween": "Days Between"
       },
       "Timestamp": {
         "TimestampToHuman": "Timestamp to Human-Readable",
@@ -35,10 +36,18 @@
           "InvalidTimestamp": "Invalid timestamp: {msg}",
           "InvalidDate": "Invalid date"
         }
+      },
+      "DaysBetween": {
+        "Title": "Days Between",
+        "Start": "Start Datetime",
+        "End": "End Datetime",
+        "Result": "Difference",
+        "Clear": "Clear",
+        "Days": "days"
       }
     },
     "MongoDBObjectID": {
-      "Name": "MongoDB ObjectID",
+      "Name": "MongoDB ObjectID tools",
       "Description": "MongoDB ObjectID tools, supporting conversion between ObjectID and corresponding time.",
       "Tabs": {
         "Extract": "Extract",

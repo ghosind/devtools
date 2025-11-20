@@ -4,6 +4,7 @@ import React, { useState } from 'react';
 import { Box, Typography, Tabs, Tab } from '@mui/material';
 import { useLang } from '@/components/LanguageProvider';
 import TimestampTab from './timestamp';
+import DaysBetweenTab from './days';
 
 export default function TimeContent() {
   const { t } = useLang();
@@ -17,11 +18,11 @@ export default function TimeContent() {
 
       <Tabs value={tab} onChange={handleTabChange} aria-label="Time tool tabs" sx={{ mb: 2 }}>
         <Tab label={t('Tools.Time.Tabs.Timestamp')} />
+        <Tab label={t('Tools.Time.Tabs.DaysBetween')} />
       </Tabs>
 
-      {tab === 0 && (
-        <TimestampTab />
-      )}
+      {tab === 0 && <TimestampTab />}
+      {tab === 1 && <DaysBetweenTab />}
     </Box>
   );
 }
