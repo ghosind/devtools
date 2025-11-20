@@ -18,7 +18,7 @@ const langs: Record<string, Messages> = {
 type ContextType = {
   locale: string;
   setLocale: (l: string) => void;
-  t: (key: string) => string;
+  t: (key: string, params?: Record<string, string | number>) => string;
 };
 
 const LangContext = createContext<ContextType>({
@@ -43,7 +43,7 @@ export default function LanguageProvider({ children }: { children: React.ReactNo
     if (typeof window !== 'undefined') localStorage.setItem('locale', locale);
   }, [locale]);
 
-  const t = (key: string) => {
+  const t = (key: string, params?: Record<string, string | number>) => {
     // support dot-separated nested keys, e.g. "home.title"
     const lookup = (obj: Messages | undefined, path: string): string | undefined => {
       if (!obj) return undefined;
@@ -56,7 +56,13 @@ export default function LanguageProvider({ children }: { children: React.ReactNo
       return typeof cur === 'string' ? cur : undefined;
     };
 
-    return lookup(langs[locale], key) ?? key;
+    const raw = lookup(langs[locale], key) ?? key;
+    if (!params) return raw;
+    // simple templating: replace {name} with corresponding param values
+    return raw.replace(/\{([^}]+)\}/g, (_, k) => {
+      const val = params[k];
+      return val === undefined ? `{${k}}` : String(val);
+    });
   };
 
   return <LangContext.Provider value={{ locale, setLocale, t }}>{children}</LangContext.Provider>;

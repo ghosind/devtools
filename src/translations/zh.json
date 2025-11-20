@@ -48,6 +48,18 @@
         "Input": "日期时间（UTC）",
         "Output": "输出（ObjectID）"
       }
+    },
+    "Radix": {
+      "Name": "进制转换",
+      "Description": "在二进制、八进制、十进制和十六进制之间转换数字。",
+      "Binary": "二进制",
+      "Octal": "八进制",
+      "Decimal": "十进制",
+      "Hex": "十六进制",
+      "Errors": {
+        "InvalidChar": "字符 '{char}' 不被允许用于基数 {base}。",
+        "InvalidDigit": "数字 '{digit}' 对于基数 {base} 无效。"
+      }
     }
   },
   "Theme": {

@@ -48,6 +48,18 @@
         "Input": "Datetime (UTC)",
         "Output": "Output (ObjectID)"
       }
+    },
+    "Radix": {
+      "Name": "Radix Converter",
+      "Description": "Convert numbers between binary, octal, decimal and hexadecimal.",
+      "Binary": "Binary",
+      "Octal": "Octal",
+      "Decimal": "Decimal",
+      "Hex": "Hex",
+      "Errors": {
+        "InvalidChar": "Invalid character '{char}' for base {base}.",
+        "InvalidDigit": "Digit '{digit}' is not valid for base {base}."
+      }
     }
   },
   "Theme": {
