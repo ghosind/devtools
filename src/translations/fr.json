@@ -7,6 +7,7 @@
   "Input": "Entrée",
   "Output": "Sortie",
   "Run": "Exécuter",
+  "Verify": "Vérifier",
   "Copy": "Copier",
   "Copied": "Copié",
   "Tools": {
@@ -70,6 +71,24 @@
       "Errors": {
         "InvalidChar": "Caractère invalide '{char}' pour la base {base}.",
         "InvalidDigit": "Le chiffre '{digit}' n'est pas valide pour la base {base}."
+      }
+    },
+    "JWT": {
+      "Name": "Inspecteur JWT",
+      "Description": "Analyse l'en-tête et le payload d'un JWT et vérifie optionnellement la signature (HS256/RS256).",
+      "Input": "JWT",
+      "Header": "En-tête (décodé)",
+      "Payload": "Payload (décodé)",
+      "Key": "Secret / Clé publique",
+      "KeyHelper": "Pour HS256 fournissez un secret. Pour RS256 fournissez une clé publique PEM.",
+      "Verify": {
+        "Success": "La signature est valide",
+        "Failure": "La signature est invalide"
+      },
+      "Errors": {
+        "InvalidToken": "Token invalide",
+        "NoSignature": "Aucune signature trouvée",
+        "UnsupportedAlg": "Algorithme non pris en charge pour la vérification"
       }
     }
   },

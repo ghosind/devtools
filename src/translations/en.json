@@ -7,6 +7,7 @@
   "Input": "Input",
   "Output": "Output",
   "Run": "Run",
+  "Verify": "Verify",
   "Copy": "Copy",
   "Copied": "Copied",
   "Tools": {
@@ -70,6 +71,24 @@
       "Errors": {
         "InvalidChar": "Invalid character '{char}' for base {base}.",
         "InvalidDigit": "Digit '{digit}' is not valid for base {base}."
+      }
+    },
+    "JWT": {
+      "Name": "JWT Inspector",
+      "Description": "Parse JWT header and payload and optionally verify the signature (HS256/RS256).",
+      "Input": "JWT",
+      "Header": "Header (decoded)",
+      "Payload": "Payload (decoded)",
+      "Key": "Secret / Public Key",
+      "KeyHelper": "For HS256 provide a secret. For RS256 provide a PEM public key.",
+      "Verify": {
+        "Success": "Signature is valid",
+        "Failure": "Signature is invalid"
+      },
+      "Errors": {
+        "InvalidToken": "Invalid token",
+        "NoSignature": "No signature found",
+        "UnsupportedAlg": "Unsupported algorithm for verification"
       }
     }
   },

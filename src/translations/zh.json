@@ -7,6 +7,7 @@
   "Input": "输入",
   "Output": "输出",
   "Run": "执行",
+  "Verify": "验证",
   "Copy": "复制",
   "Copied": "已复制",
   "Tools": {
@@ -70,6 +71,24 @@
       "Errors": {
         "InvalidChar": "字符 '{char}' 不被允许用于基数 {base}。",
         "InvalidDigit": "数字 '{digit}' 对于基数 {base} 无效。"
+      }
+    },
+    "JWT": {
+      "Name": "JWT 检查器",
+      "Description": "解析 JWT 的头部和载荷，可选地验证签名（支持 HS256/RS256）。",
+      "Input": "JWT",
+      "Header": "头部（解码）",
+      "Payload": "载荷（解码）",
+      "Key": "密钥 / 公钥",
+      "KeyHelper": "HS256 提供 secret，RS256 提供 PEM 格式的公钥。",
+      "Verify": {
+        "Success": "签名有效",
+        "Failure": "签名无效"
+      },
+      "Errors": {
+        "InvalidToken": "无效的JWT",
+        "NoSignature": "找不到签名",
+        "UnsupportedAlg": "不支持的验证算法"
       }
     }
   },

@@ -18,4 +18,9 @@ export const tools = [{
   title: 'Tools.Radix.Name',
   description: 'Tools.Radix.Description',
   href: '/tools/radix'
+}, {
+  key: 'jwt',
+  title: 'Tools.JWT.Name',
+  description: 'Tools.JWT.Description',
+  href: '/tools/jwt'
 }];
