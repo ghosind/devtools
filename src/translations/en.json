@@ -1,4 +1,6 @@
 {
+  "Name": "DevTools",
+  "Description": "A collection of developer utilities.",
   "Home": "Home",
   "Encode": "Encode",
   "Decode": "Decode",

@@ -1,4 +1,6 @@
 {
+  "Name": "DevTools",
+  "Description": "开发者工具集。",
   "Home": "首页",
   "Encode": "编码",
   "Decode": "解码",

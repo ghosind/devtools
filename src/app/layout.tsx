@@ -2,14 +2,29 @@ import '@/styles/globals.css';
 import Providers from '@/components/Providers';
 import Layout from '@/components/Layout';
 import { FOOTER_HEIGHT } from '@/constants/ui';
+import en from '@/translations/en.json';
 
 export const metadata = {
-  title: 'DevTools',
-  description: 'A collection of small developer utilities.',
-  keywords: ['devtools', 'base64'],
+  title: {
+    default: en.Name,
+    template: `%s - ${en.Name}`
+  },
+  description: en.Description,
+  keywords: ['devtools'],
   openGraph: {
-    title: 'DevTools',
-    description: 'A collection of small developer utilities.'
+    title: {
+      default: en.Name,
+      template: `%s - ${en.Name}`
+    },
+    description: en.Description
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: {
+      default: en.Name,
+      template: `%s - ${en.Name}`
+    },
+    description: en.Description,
   },
   robots: {
     index: true,
