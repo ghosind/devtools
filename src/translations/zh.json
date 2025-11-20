@@ -99,6 +99,34 @@
         "NoSignature": "找不到签名",
         "UnsupportedAlg": "不支持的验证算法"
       }
+    },
+    "UserAgent": {
+      "Name": "UserAgent 检查器",
+      "Description": "解析浏览器的UserAgent，提取浏览器、操作系统和设备信息。",
+      "Browser": "浏览器",
+      "OS": "操作系统",
+      "Device": "设备",
+      "Unknown": "未知",
+      "Browsers": {
+        "Edge": "Edge",
+        "Opera": "Opera",
+        "Chrome": "Chrome",
+        "Firefox": "Firefox",
+        "Safari": "Safari"
+      },
+      "OSs": {
+        "Windows": "Windows",
+        "Android": "Android",
+        "iOS": "iOS",
+        "macOS": "macOS",
+        "Linux": "Linux"
+      },
+      "Devices": {
+        "Bot": "机器人",
+        "Tablet": "平板",
+        "Mobile": "手机",
+        "Desktop": "PC"
+      }
     }
   },
   "Theme": {

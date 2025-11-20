@@ -99,6 +99,34 @@
         "NoSignature": "Aucune signature trouvée",
         "UnsupportedAlg": "Algorithme non pris en charge pour la vérification"
       }
+    },
+    "UserAgent": {
+      "Name": "Inspecteur UserAgent",
+      "Description": "Analyse l'UserAgent pour extraire le navigateur, le système et l'appareil.",
+      "Browser": "Navigateur",
+      "OS": "Système d'exploitation",
+      "Device": "Appareil",
+      "Unknown": "Inconnu",
+      "Browsers": {
+        "Edge": "Edge",
+        "Opera": "Opera",
+        "Chrome": "Chrome",
+        "Firefox": "Firefox",
+        "Safari": "Safari"
+      },
+      "OSs": {
+        "Windows": "Windows",
+        "Android": "Android",
+        "iOS": "iOS",
+        "macOS": "macOS",
+        "Linux": "Linux"
+      },
+      "Devices": {
+        "Bot": "Bot",
+        "Tablet": "Tablette",
+        "Mobile": "Mobile",
+        "Desktop": "Bureau"
+      }
     }
   },
   "Theme": {

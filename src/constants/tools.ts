@@ -23,4 +23,9 @@ export const tools = [{
   title: 'Tools.JWT.Name',
   description: 'Tools.JWT.Description',
   href: '/tools/jwt'
-}];
+ }, {
+  key: 'useragent',
+  title: 'Tools.UserAgent.Name',
+  description: 'Tools.UserAgent.Description',
+  href: '/tools/useragent'
+ }];

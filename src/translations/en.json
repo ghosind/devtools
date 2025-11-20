@@ -99,6 +99,34 @@
         "NoSignature": "No signature found",
         "UnsupportedAlg": "Unsupported algorithm for verification"
       }
+    },
+    "UserAgent": {
+      "Name": "User-Agent Inspector",
+      "Description": "Parse browser UserAgent to extract browser, OS and device information.",
+      "Browser": "Browser",
+      "OS": "Operating System",
+      "Device": "Device",
+      "Unknown": "Unknown",
+      "Browsers": {
+        "Edge": "Edge",
+        "Opera": "Opera",
+        "Chrome": "Chrome",
+        "Firefox": "Firefox",
+        "Safari": "Safari"
+      },
+      "OSs": {
+        "Windows": "Windows",
+        "Android": "Android",
+        "iOS": "iOS",
+        "macOS": "macOS",
+        "Linux": "Linux"
+      },
+      "Devices": {
+        "Bot": "Bot",
+        "Tablet": "Tablet",
+        "Mobile": "Mobile",
+        "Desktop": "Desktop"
+      }
     }
   },
   "Theme": {
