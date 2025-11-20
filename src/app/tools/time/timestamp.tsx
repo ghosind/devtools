@@ -26,9 +26,10 @@ export default function TimestampTab() {
         utc: formatDate(date, true),
         local: `${formatDate(date, false)} (GMT${timezone >= 0 ? '+' : ''}${timezone})`,
       };
-    } catch (e) {
-      const msg = String(e);
-      return { utc: msg, local: msg };
+    } catch (err) {
+      const msg = String((err as any)?.message ?? err);
+      const localized = t('Tools.Time.Timestamp.Errors.InvalidTimestamp', { msg });
+      return { utc: localized, local: localized };
     }
   };
 
@@ -46,8 +47,8 @@ export default function TimestampTab() {
         d.getMilliseconds()
       );
       return String(Math.floor(ms / 1000));
-    } catch (e) {
-      return String(e);
+    } catch (err) {
+      return t('Tools.Time.Timestamp.Errors.InvalidDate');
     }
   }
 

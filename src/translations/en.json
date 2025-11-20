@@ -12,7 +12,10 @@
   "Tools": {
     "Base64": {
       "Name": "Base64 Encoder/Decoder",
-      "Description": "Encode and decode text using Base64 encoding scheme."
+      "Description": "Encode and decode text using Base64 encoding scheme.",
+      "Errors": {
+        "InvalidInput": "Invalid input: {msg}"
+      }
     },
     "Time": {
       "Name": "Time Calculation Tools",
@@ -26,7 +29,11 @@
         "TimestampInput": "Timestamp (s or ms)",
         "ReadableInput": "Datetime (UTC)",
         "TimeOutputUTC": "Output (UTC)",
-        "TimeOutputLocal": "Output (Local)"
+        "TimeOutputLocal": "Output (Local)",
+        "Errors": {
+          "InvalidTimestamp": "Invalid timestamp: {msg}",
+          "InvalidDate": "Invalid date"
+        }
       }
     },
     "MongoDBObjectID": {
@@ -47,6 +54,10 @@
         "Title": "UTC Datetime to ObjectID",
         "Input": "Datetime (UTC)",
         "Output": "Output (ObjectID)"
+      },
+      "Errors": {
+        "InvalidObjectID": "Invalid ObjectID",
+        "InvalidDate": "Invalid date"
       }
     },
     "Radix": {

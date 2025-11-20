@@ -9,13 +9,14 @@ export default function Base64Content() {
   const { t } = useLang();
   const [input, setInput] = useState('');
   const [output, setOutput] = useState('');
+  const [outputError, setOutputError] = useState('');
   const [mode, setMode] = useState<'encode' | 'decode'>('encode');
 
   const encodeBase64 = (input: string): string => {
     try {
       return Buffer.from(input, 'utf8').toString('base64');
     } catch (e) {
-      return String(e);
+      throw e;
     }
   }
 
@@ -23,16 +24,19 @@ export default function Base64Content() {
     try {
       return Buffer.from(input, 'base64').toString('utf8');
     } catch (e) {
-      return String(e);
+      throw e;
     }
   }
 
   function run() {
     try {
+      setOutputError('');
       if (mode === 'encode') setOutput(encodeBase64(input));
       else setOutput(decodeBase64(input));
     } catch (e) {
-      setOutput(String(e));
+      const msg = String((e as any)?.message ?? e);
+      setOutput('');
+      setOutputError(t('Tools.Base64.Errors.InvalidInput', { msg }));
     }
   }
 
@@ -57,7 +61,7 @@ export default function Base64Content() {
         <Button variant="contained" onClick={run} sx={{ mb: 2 }}>{t('Run')}</Button>
 
         <Box sx={{ display: 'flex', gap: 1, alignItems: 'flex-start', mb: 2 }}>
-          <TextField label={t('Output')} value={output} fullWidth multiline rows={4} InputProps={{ readOnly: true }} sx={{ flex: 1 }} />
+          <TextField label={t('Output')} value={output} fullWidth multiline rows={4} InputProps={{ readOnly: true }} sx={{ flex: 1 }} error={!!outputError} helperText={outputError} />
           <Box sx={{ display: 'flex', flexDirection: 'column', gap: 1 }}>
             <CopyButton text={output} variant="outlined" sx={{ whiteSpace: 'nowrap' }} />
           </Box>

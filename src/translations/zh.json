@@ -12,7 +12,10 @@
   "Tools": {
     "Base64": {
       "Name": "Base64 编码/解码器",
-      "Description": "使用 Base64 编码方案对文本进行编码和解码。"
+      "Description": "使用 Base64 编码方案对文本进行编码和解码。",
+      "Errors": {
+        "InvalidInput": "无效输入：{msg}"
+      }
     },
     "Time": {
       "Name": "时间计算工具",
@@ -26,7 +29,11 @@
         "TimestampInput": "时间戳（秒或毫秒）",
         "ReadableInput": "日期时间（UTC）",
         "TimeOutputUTC": "输出（UTC）",
-        "TimeOutputLocal": "输出（本地）"
+        "TimeOutputLocal": "输出（本地）",
+        "Errors": {
+          "InvalidTimestamp": "无效的时间戳：{msg}",
+          "InvalidDate": "无效的日期"
+        }
       }
     },
     "MongoDBObjectID": {
@@ -47,6 +54,10 @@
         "Title": "UTC时间生成ObjectID",
         "Input": "日期时间（UTC）",
         "Output": "输出（ObjectID）"
+      },
+      "Errors": {
+        "InvalidObjectID": "无效的 ObjectID",
+        "InvalidDate": "无效的日期"
       }
     },
     "Radix": {

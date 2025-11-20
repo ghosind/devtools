@@ -12,12 +12,12 @@ export default function ObjectIDExtractTab() {
   const [oidTs, setOidTs] = useState('');
 
   function isValidObjectId(id: string) {
-    return /^(ObjectId\(")?[0-9a-fA-F]{24}("\))?$/.test(id);
+    return /^(ObjectId\("\")?[0-9a-fA-F]{24}("\)\))?$/.test(id);
   }
 
   function parseObjectIdToDate(id: string) {
     if (!isValidObjectId(id)) {
-      throw new Error('Invalid ObjectID');
+      throw { code: 'INVALID_OBJECTID' };
     }
     if (id.startsWith('ObjectId("') && id.endsWith('")')) {
       id = id.slice(10, -2);
@@ -39,16 +39,24 @@ export default function ObjectIDExtractTab() {
       />
       <Button variant="contained" onClick={() => {
         try {
-          const d = parseObjectIdToDate(oidInput.trim());
-          setOidUtc(formatDate(d, true));
-          const tz = d.getTimezoneOffset() / -60;
-          setOidLocal(`${formatDate(d, false)} (GMT${tz >= 0 ? '+' : ''}${tz})`);
-          setOidTs(String(Math.floor(d.getTime() / 1000)));
-        } catch (e: any) {
-          setOidUtc(String(e?.message ?? e));
-          setOidLocal(String(e?.message ?? e));
-          setOidTs(String(e?.message ?? e));
-        }
+            const d = parseObjectIdToDate(oidInput.trim());
+            setOidUtc(formatDate(d, true));
+            const tz = d.getTimezoneOffset() / -60;
+            setOidLocal(`${formatDate(d, false)} (GMT${tz >= 0 ? '+' : ''}${tz})`);
+            setOidTs(String(Math.floor(d.getTime() / 1000)));
+          } catch (err: any) {
+            if (err && typeof err === 'object' && 'code' in err && err.code === 'INVALID_OBJECTID') {
+              const msg = t('Tools.MongoDBObjectID.Errors.InvalidObjectID');
+              setOidUtc(msg);
+              setOidLocal(msg);
+              setOidTs(msg);
+            } else {
+              const msg = String(err?.message ?? err);
+              setOidUtc(msg);
+              setOidLocal(msg);
+              setOidTs(msg);
+            }
+          }
       }}>{t('Run')}</Button>
 
       <Box sx={{ mt: 2, display: 'flex', gap: 1 }}>

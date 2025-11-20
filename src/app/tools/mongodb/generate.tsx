@@ -31,7 +31,7 @@ export default function ObjectGenerateTab() {
       <DateTimeInput label={t('Tools.MongoDBObjectID.Generate.Input')} value={genDate} onChange={(v) => setGenDate(v)} sx={{ my: 1 }} />
       <Button variant="contained" onClick={() => {
         if (!genDate) {
-          setGenOid('Invalid date');
+          setGenOid(t('Tools.MongoDBObjectID.Errors.InvalidDate'));
           return;
         }
         const oid = generateObjectIdFromDate(genDate);
