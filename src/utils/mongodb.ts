@@ -1,5 +1,5 @@
 export const isValidObjectId = (id: string) => {
-  return /^(ObjectId\("\")?[0-9a-fA-F]{24}("\)\))?$/.test(id);
+  return /^(ObjectId\(\")?[0-9a-fA-F]{24}("\))?$/.test(id);
 }
 
 export const parseObjectIdToDate = (id: string) => {
