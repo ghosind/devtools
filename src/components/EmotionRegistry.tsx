@@ -1,21 +1,35 @@
 'use client';
 
-import { ReactNode, useState } from 'react';
-import createCache from '@emotion/cache';
+import { PropsWithChildren } from 'react';
 import { CacheProvider } from '@emotion/react';
+import createCache from '@emotion/cache';
+import { useServerInsertedHTML } from 'next/navigation';
 
-function createEmotionCache() {
+const createEmotionCache = () => {
   return createCache({
-    key: 'css',
+    key: 'mui',
     prepend: true,
   });
 }
 
-export default function EmotionRegistry({ children }: { children: ReactNode }) {
-  const [cache] = useState(() => createEmotionCache());
+const clientSideCache = createEmotionCache();
+
+export default function EmotionRegistry({ children }: PropsWithChildren) {
+  useServerInsertedHTML(() => {
+    const cache = clientSideCache;
+    const styles = Object.entries(cache.inserted)
+      .map(([key, value]) => (typeof value === 'string' ?
+        <style
+          key={key}
+          data-emotion={`${cache.key} ${key}`}
+          dangerouslySetInnerHTML={{ __html: value }}
+        />
+        : (<></>)));
+    return <>{styles}</>;
+  });
 
   return (
-    <CacheProvider value={cache}>
+    <CacheProvider value={clientSideCache}>
       {children}
     </CacheProvider>
   );

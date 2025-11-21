@@ -35,16 +35,14 @@ export const metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang='en'>
-      <EmotionRegistry>
-        <body style={{ paddingBottom: `calc(${FOOTER_HEIGHT}px + env(safe-area-inset-bottom))` }}>
+    <html lang="en">
+      <body style={{ paddingBottom: `calc(${FOOTER_HEIGHT}px + env(safe-area-inset-bottom))` }}>
+        <EmotionRegistry>
           <Providers>
-            <Layout>
-              {children}
-            </Layout>
+            <Layout>{children}</Layout>
           </Providers>
-        </body>
-      </EmotionRegistry>
+        </EmotionRegistry>
+      </body>
     </html>
   );
 }

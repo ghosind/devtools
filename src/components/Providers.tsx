@@ -1,6 +1,6 @@
 'use client';
 
-import React, { createContext, useContext, useEffect, useMemo, useState } from 'react';
+import { PropsWithChildren, createContext, useContext, useEffect, useMemo, useState } from 'react';
 import { ThemeProvider, createTheme, CssBaseline } from '@mui/material';
 import GoogleAnalytics from './GoogleAnalytics';
 import LanguageProvider from './LanguageProvider';
@@ -9,73 +9,50 @@ type ThemeMode = 'light' | 'dark';
 
 type ThemeContextType = {
   mode: ThemeMode;
-  setMode: (m: ThemeMode) => void;
   toggleMode: () => void;
 };
 
 const ThemeModeContext = createContext<ThemeContextType>({
   mode: 'light',
-  setMode: () => {},
-  toggleMode: () => {}
+  toggleMode: () => {},
 });
 
 export function useThemeMode() {
   return useContext(ThemeModeContext);
 }
 
-export default function Providers({ children }: { children: React.ReactNode }) {
+export default function Providers({ children }: PropsWithChildren) {
   const [mode, setMode] = useState<ThemeMode>('light');
+  const [mounted, setMounted] = useState(false);
 
-  // initialize from localStorage or system preference
   useEffect(() => {
-    const stored = typeof window !== 'undefined' ? localStorage.getItem('theme') : null;
-    if (stored === 'light' || stored === 'dark') {
-      setMode(stored as ThemeMode);
-      return;
-    }
-
-    const mql = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)');
-    if (mql && mql.matches) {
-      setMode('dark');
-    }
-
-    const listener = (e: MediaQueryListEvent) => {
-      // only change when user hasn't set explicit preference
-      const explicit = localStorage.getItem('theme');
-      if (explicit !== 'light' && explicit !== 'dark') {
-        setMode(e.matches ? 'dark' : 'light');
-      }
-    };
-
+    let initial: ThemeMode = 'light';
     try {
-      mql && mql.addEventListener && mql.addEventListener('change', listener);
-    } catch (e) {
-      // Safari fallback
-      mql && mql.addListener && mql.addListener(listener as any);
-    }
-
-    return () => {
-      try {
-        mql && mql.removeEventListener && mql.removeEventListener('change', listener);
-      } catch (e) {
-        mql && mql.removeListener && mql.removeListener(listener as any);
+      const stored = localStorage.getItem('theme') as ThemeMode | null;
+      if (stored === 'light' || stored === 'dark') {
+        initial = stored;
+      } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        initial = 'dark';
       }
-    };
+    } catch {}
+    setMode(initial);
+    setMounted(true);
   }, []);
 
   const toggleMode = () => {
-    setMode((prev) => {
-      const next = prev === 'dark' ? 'light' : 'dark';
-      try {
-        localStorage.setItem('theme', next);
-      } catch (e) {}
-      return next;
-    });
+    const next = mode === 'dark' ? 'light' : 'dark';
+    setMode(next);
+    try {
+      localStorage.setItem('theme', next);
+    } catch {}
   };
 
-  const value = useMemo(() => ({ mode, setMode, toggleMode }), [mode]);
-
   const theme = useMemo(() => createTheme({ palette: { mode } }), [mode]);
+  const value = useMemo(() => ({ mode, toggleMode }), [mode]);
+
+  if (!mounted) {
+    return null;
+  }
 
   return (
     <LanguageProvider>
