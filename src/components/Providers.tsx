@@ -1,15 +1,15 @@
-"use client";
+'use client';
 
 import React, { createContext, useContext, useEffect, useMemo, useState } from 'react';
 import { ThemeProvider, createTheme, CssBaseline } from '@mui/material';
-import LanguageProvider from './LanguageProvider';
 import GoogleAnalytics from './GoogleAnalytics';
+import LanguageProvider from './LanguageProvider';
 
-type Mode = 'light' | 'dark';
+type ThemeMode = 'light' | 'dark';
 
 type ThemeContextType = {
-  mode: Mode;
-  setMode: (m: Mode) => void;
+  mode: ThemeMode;
+  setMode: (m: ThemeMode) => void;
   toggleMode: () => void;
 };
 
@@ -24,18 +24,20 @@ export function useThemeMode() {
 }
 
 export default function Providers({ children }: { children: React.ReactNode }) {
-  const [mode, setMode] = useState<Mode>('light');
+  const [mode, setMode] = useState<ThemeMode>('light');
 
   // initialize from localStorage or system preference
   useEffect(() => {
     const stored = typeof window !== 'undefined' ? localStorage.getItem('theme') : null;
     if (stored === 'light' || stored === 'dark') {
-      setMode(stored as Mode);
+      setMode(stored as ThemeMode);
       return;
     }
 
     const mql = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)');
-    if (mql && mql.matches) setMode('dark');
+    if (mql && mql.matches) {
+      setMode('dark');
+    }
 
     const listener = (e: MediaQueryListEvent) => {
       // only change when user hasn't set explicit preference

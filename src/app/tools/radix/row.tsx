@@ -1,11 +1,16 @@
-import CopyButton from "@/components/CopyButton";
-import { Box, TextField } from "@mui/material";
+import CopyButton from '@/components/CopyButton';
+import { Box, TextField } from '@mui/material';
 
-export default function FieldRow({
+export interface RadixFieldRowProps {
+  label: string;
+  value: string;
+  onChange: (v: string) => void;
+  error?: string;
+}
+
+export default function RadixFieldRow({
   label, value, onChange, error
-}: {
-  label: string; value: string; onChange: (v: string) => void; error?: string
-}) {
+}: RadixFieldRowProps) {
   return (
     <Box>
       <TextField

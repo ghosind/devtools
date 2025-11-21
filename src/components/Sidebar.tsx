@@ -1,37 +1,36 @@
-"use client";
+'use client';
 
-import React from 'react';
-import Drawer from '@mui/material/Drawer';
-import Box from '@mui/material/Box';
-import List from '@mui/material/List';
-import ListItemButton from '@mui/material/ListItemButton';
-import ListItemText from '@mui/material/ListItemText';
-import ListSubheader from '@mui/material/ListSubheader';
-import Divider from '@mui/material/Divider';
+import { Box, Divider, Drawer, List, ListItemButton, ListItemText } from '@mui/material';
 import NextLink from 'next/link';
 import { tools } from '@/constants/tools';
 import { useLang } from './LanguageProvider';
 
-type Props = {
+type SidebarProps = {
   open: boolean;
   onClose: () => void;
 };
 
-export default function Sidebar({ open, onClose }: Props) {
+export default function Sidebar({ open, onClose }: SidebarProps) {
   const { t } = useLang();
 
   return (
     <Drawer
-      anchor="left"
+      anchor='left'
       open={open}
       onClose={onClose}
-      ModalProps={{
-        keepMounted: true,
-      }}
+      ModalProps={{ keepMounted: true }}
     >
-      <Box sx={{ width: 260 }} role="presentation" onKeyDown={(e) => { if (e.key === 'Escape') onClose(); }}>
+      <Box
+        sx={{ width: 260 }}
+        role='presentation'
+        onKeyDown={(e) => {
+          if (e.key === 'Escape') {
+            onClose();
+          }
+        }}
+      >
         <List>
-          <ListItemButton component={NextLink} href="/" onClick={onClose}>
+          <ListItemButton component={NextLink} href='/' onClick={onClose}>
             <ListItemText primary={t('Home')} />
           </ListItemButton>
           <Divider />

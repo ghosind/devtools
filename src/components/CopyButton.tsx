@@ -1,12 +1,17 @@
-import React, { useState } from 'react';
-import { Button } from '@mui/material';
-import type { ButtonProps } from '@mui/material';
+'use client';
+
+import { useState } from 'react';
+import { Button, ButtonProps } from '@mui/material';
 import { useLang } from './LanguageProvider';
 
 export interface CopyButtonProps extends Omit<ButtonProps, 'onClick'> {
-  /** Text content that will be copied to clipboard */
+  /**
+   * Text content that will be copied to clipboard
+   */
   text: string;
-  /** Optional callback invoked after successful copy */
+  /**
+   * Optional callback invoked after successful copy
+   */
   onCopy?: () => void;
 }
 
@@ -19,8 +24,11 @@ export default function CopyButton({
   const [copied, setCopied] = useState(false);
   const { t } = useLang();
 
-  async function handleCopy() {
-    if (!text) return;
+  const handleCopy = async () => {
+    if (!text) {
+      return;
+    }
+
     try {
       if (navigator.clipboard && navigator.clipboard.writeText) {
         await navigator.clipboard.writeText(text);

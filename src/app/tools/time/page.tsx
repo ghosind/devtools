@@ -4,7 +4,7 @@ import en from '@/translations/en.json';
 export const metadata = {
   title: en.Tools.Time.Name,
   description: en.Tools.Time.Description,
-  keywords: ['devtools', 'date', 'time', 'timestamp'],
+  keywords: ['devtools', 'date', 'time', 'timestamp', 'date range', 'date calculate'],
   openGraph: {
     title: en.Tools.Time.Name,
     description: en.Tools.Time.Description

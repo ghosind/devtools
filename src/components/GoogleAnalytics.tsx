@@ -1,19 +1,18 @@
-"use client";
+'use client';
 
 import { useEffect } from 'react';
 import { usePathname } from 'next/navigation';
+import { isBrowser } from '@/utils/browser';
 
 const GA_ID = process.env.NEXT_PUBLIC_GA_ID;
-
-function isBrowser() {
-  return typeof window !== 'undefined';
-}
 
 export default function GoogleAnalytics() {
   const pathname = usePathname();
 
   useEffect(() => {
-    if (!GA_ID || !isBrowser()) return;
+    if (!GA_ID || !isBrowser()) {
+      return;
+    }
 
     // Inject gtag script if not present
     if (!document.querySelector(`script[src*="googletagmanager.com/gtag/js?id=${GA_ID}"]`)) {
@@ -29,17 +28,22 @@ export default function GoogleAnalytics() {
     }
 
     if (!(window as any).gtag) {
-      (window as any).gtag = function () { (window as any).dataLayer.push(arguments); };
+      (window as any).gtag = function () {
+        (window as any).dataLayer.push(arguments);
+      };
       (window as any).gtag('js', new Date());
       (window as any).gtag('config', GA_ID, { page_path: pathname });
     }
 
-  // We intentionally want GA_ID to be captured from env at runtime and pathname to trigger page view updates
-  // eslint-disable-next-line react-hooks/exhaustive-deps
+    // We intentionally want GA_ID to be captured from env at runtime and pathname to trigger page
+    // view updates
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [pathname]);
 
   useEffect(() => {
-    if (!GA_ID || !isBrowser()) return;
+    if (!GA_ID || !isBrowser()) {
+      return;
+    }
 
     const handleRoute = (path: string) => {
       try {

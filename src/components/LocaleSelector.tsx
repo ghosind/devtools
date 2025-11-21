@@ -1,6 +1,5 @@
-"use client";
+'use client';
 
-import React from 'react';
 import Select from '@mui/material/Select';
 import MenuItem from '@mui/material/MenuItem';
 import { useLang } from './LanguageProvider';
@@ -13,7 +12,7 @@ export default function LocaleSelector() {
     <Select
       value={locale}
       onChange={(e) => setLocale(String(e.target.value))}
-      variant="standard"
+      variant='standard'
       sx={{ color: 'white' }}
     >
       {langs.map((lang) => (

@@ -1,10 +1,9 @@
-"use client";
+'use client';
 
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { Box, Typography, TextField, Alert } from '@mui/material';
 import { useLang } from '@/components/LanguageProvider';
 import { parseJwt, verifyHs256, verifyRs256 } from '@/utils/jwt';
-import { Check } from '@mui/icons-material';
 
 const supportedAlgorithms = new Map([
   ['HS256', verifyHs256],
@@ -23,8 +22,9 @@ export default function JwtContent() {
   async function handleParseAndVerify() {
     setError(null);
     setVerifyResult(null);
+    setHeader('');
+    setPayload('');
     if (!jwt || !jwt.trim()) {
-      setHeader(''); setPayload('');
       return;
     }
 
@@ -34,7 +34,6 @@ export default function JwtContent() {
       setHeader(JSON.stringify(parsed.header, null, 2));
       setPayload(JSON.stringify(parsed.payload, null, 2));
     } catch (e: any) {
-      setHeader(''); setPayload('');
       setError(t('Tools.JWT.Errors.InvalidToken'));
       return;
     }
@@ -42,6 +41,7 @@ export default function JwtContent() {
     if (!key || !key.trim()) {
       return;
     }
+
     try {
       const sig = parsed.signatureB64 || '';
       if (!sig) {
@@ -73,7 +73,7 @@ export default function JwtContent() {
 
   return (
     <Box>
-      <Typography variant="h5" sx={{ mb: 2 }}>{t('Tools.JWT.Name')}</Typography>
+      <Typography variant='h5' sx={{ mb: 2 }}>{t('Tools.JWT.Name')}</Typography>
 
       <Box sx={{ display: 'grid', gap: 2 }}>
         <TextField
@@ -85,7 +85,7 @@ export default function JwtContent() {
           onBlur={handleParseAndVerify}
         />
 
-        {error && <Alert severity="error">{error}</Alert>}
+        {error && <Alert severity='error'>{error}</Alert>}
 
         <TextField
           label={t('Tools.JWT.Header')}
@@ -103,8 +103,9 @@ export default function JwtContent() {
         />
 
         {verifyResult &&
-          <Alert
-            severity={verifyResult === t('Tools.JWT.Verify.Success') ? 'success' : 'warning'}>
+          <Alert severity={
+            verifyResult === t('Tools.JWT.Verify.Success') ? 'success' : 'warning'
+          }>
             {verifyResult}
           </Alert>
         }

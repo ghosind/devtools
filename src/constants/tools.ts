@@ -10,8 +10,8 @@ export const tools = [{
   href: '/tools/time'
 }, {
   key: 'mongodb',
-  title: 'Tools.MongoDBObjectID.Name',
-  description: 'Tools.MongoDBObjectID.Description',
+  title: 'Tools.MongoDB.Name',
+  description: 'Tools.MongoDB.Description',
   href: '/tools/mongodb'
 }, {
   key: 'radix',

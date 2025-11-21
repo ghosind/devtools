@@ -8,6 +8,7 @@
   "Output": "输出",
   "Run": "执行",
   "Verify": "验证",
+  "Reset": "重置",
   "Copy": "复制",
   "Copied": "已复制",
   "Tools": {
@@ -46,7 +47,7 @@
         "Days": "天"
       }
     },
-    "MongoDBObjectID": {
+    "MongoDB": {
       "Name": "MongoDB ObjectID工具",
       "Description": "MongoDB ObjectID工具，支持ObjectID与对应时间的转换。",
       "Tabs": {
@@ -54,14 +55,12 @@
         "Generate": "生成"
       },
       "Extract": {
-        "Title": "ObjectID转为时间",
         "Input": "ObjectID",
         "OutputUTC": "输出（UTC）",
         "OutputLocal": "输出（本地）",
         "OutputTimestamp": "时间戳（秒）"
       },
       "Generate": {
-        "Title": "UTC时间生成ObjectID",
         "Input": "日期时间（UTC）",
         "Output": "输出（ObjectID）"
       },

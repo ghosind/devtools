@@ -1,11 +1,11 @@
-"use client";
+'use client';
 
-import { useState } from "react";
-import CopyButton from "@/components/CopyButton";
-import { useLang } from "@/components/LanguageProvider";
-import { Box, Button, TextField, Typography } from "@mui/material";
+import { useState } from 'react';
+import { Box, Button, TextField, Typography } from '@mui/material';
+import CopyButton from '@/components/CopyButton';
 import DateTimeInput from '@/components/DateTimeInput';
-import { formatDate } from "@/utils/time";
+import { useLang } from '@/components/LanguageProvider';
+import { humanDatetimeToTimestamp, timestampToHumanDatetime } from '@/utils/time';
 
 export default function TimestampTab() {
   const { t } = useLang();
@@ -15,47 +15,33 @@ export default function TimestampTab() {
   const [readableInput, setReadableInput] = useState<Date | null>(null);
   const [tsOutput, setTsOutput] = useState('');
 
-  const timestampToReadable = (ts: string) => {
+  const handleTimestampToHumanDatetime = () => {
     try {
-      const n = Number(ts);
-      if (Number.isNaN(n)) throw new Error('Invalid timestamp');
-      const date = new Date(n >= 1e12 ? n : n * 1000);
-      const timezone = date.getTimezoneOffset() / -60;
-
-      return {
-        utc: formatDate(date, true),
-        local: `${formatDate(date, false)} (GMT${timezone >= 0 ? '+' : ''}${timezone})`,
-      };
+      const { utc, local } = timestampToHumanDatetime(tsInput);
+      setReadableOutput(utc);
+      setReadableLocalOutput(local);
     } catch (err) {
       const msg = String((err as any)?.message ?? err);
       const localized = t('Tools.Time.Timestamp.Errors.InvalidTimestamp', { msg });
-      return { utc: localized, local: localized };
+      setReadableOutput(localized);
+      setReadableLocalOutput(localized);
     }
-  };
+  }
 
-  const readableToTimestamp = (d: Date | null) => {
+  const handleHumanDatetimeToTimestamp = () => {
     try {
-      if (!d) throw new Error('Invalid date');
-      // Interpret the selected date as UTC (take its components and build a UTC timestamp)
-      const ms = Date.UTC(
-        d.getFullYear(),
-        d.getMonth(),
-        d.getDate(),
-        d.getHours(),
-        d.getMinutes(),
-        d.getSeconds(),
-        d.getMilliseconds()
-      );
-      return String(Math.floor(ms / 1000));
+      const timestamp = humanDatetimeToTimestamp(readableInput);
+      setTsOutput(timestamp);
     } catch (err) {
-      return t('Tools.Time.Timestamp.Errors.InvalidDate');
+      const localized = t('Tools.Time.Timestamp.Errors.InvalidDate');
+      setTsOutput(localized);
     }
   }
 
   return (
     <Box sx={{ mb: 3 }}>
       <Box sx={{ mt: 1 }}>
-        <Typography variant="subtitle2">
+        <Typography variant='subtitle2'>
           {t('Tools.Time.Timestamp.TimestampToHuman')}
         </Typography>
         <TextField
@@ -65,16 +51,7 @@ export default function TimestampTab() {
           fullWidth
           sx={{ my: 1 }}
         />
-        <Button
-          variant="contained"
-          onClick={() => {
-            const res = timestampToReadable(tsInput);
-            setReadableOutput(res.utc);
-            setReadableLocalOutput(res.local);
-          }}
-        >
-          {t('Run')}
-        </Button>
+        <Button variant='contained' onClick={handleTimestampToHumanDatetime}>{t('Run')}</Button>
         <Box sx={{ mt: 1, display: 'flex', gap: 1 }}>
           <TextField
             label={t('Tools.Time.Timestamp.TimeOutputUTC')}
@@ -84,6 +61,7 @@ export default function TimestampTab() {
           />
           <CopyButton text={readableOutput} />
         </Box>
+
         <Box sx={{ mt: 1, display: 'flex', gap: 1 }}>
           <TextField
             label={t('Tools.Time.Timestamp.TimeOutputLocal')}
@@ -96,7 +74,7 @@ export default function TimestampTab() {
       </Box>
 
       <Box sx={{ mt: 3 }}>
-        <Typography variant="subtitle2">
+        <Typography variant='subtitle2'>
           {t('Tools.Time.Timestamp.HumanToTimestamp')}
         </Typography>
         <DateTimeInput
@@ -105,12 +83,7 @@ export default function TimestampTab() {
           onChange={(v) => setReadableInput(v)}
           sx={{ my: 1 }}
         />
-        <Button
-          variant="contained"
-          onClick={() => { setTsOutput(readableToTimestamp(readableInput)) }}
-        >
-          {t('Run')}
-        </Button>
+        <Button variant='contained' onClick={handleHumanDatetimeToTimestamp}> {t('Run')}</Button>
         <Box sx={{ mt: 1, display: 'flex', gap: 1 }}>
           <TextField
             label={t('Output')}

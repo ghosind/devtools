@@ -1,5 +1,5 @@
-import RadixContent from './content';
 import en from '@/translations/en.json';
+import RadixContent from './content';
 
 export const metadata = {
   title: en.Tools.Radix.Name,

@@ -1,13 +1,12 @@
-"use client";
+'use client';
 
-import React from 'react';
 import { Box, Link, Typography } from '@mui/material';
 import { FOOTER_HEIGHT } from '@/constants/ui';
 
 export default function Footer() {
   return (
     <Box
-      component="footer"
+      component='footer'
       sx={{
         position: 'fixed',
         left: 0,
@@ -22,8 +21,10 @@ export default function Footer() {
         zIndex: (theme) => theme.zIndex.appBar - 1,
       }}
     >
-      <Typography variant="body2" color="text.secondary">
-        © {new Date().getFullYear()} <Link href="https://ghosind.com">ghosind.com</Link>. All rights reserved.{' '}
+      <Typography variant='body2' color='text.secondary'>
+        © {
+          new Date().getFullYear()
+        } <Link href='https://ghosind.com'>ghosind.com</Link>. All rights reserved.{' '}
       </Typography>
     </Box>
   );

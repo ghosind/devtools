@@ -1,8 +1,8 @@
-"use client";
+'use client';
 
 import React, { useState } from 'react';
 import { Box, Typography } from '@mui/material';
-import FieldRow from './row';
+import RadixFieldRow from './row';
 import { useLang } from '@/components/LanguageProvider';
 
 export default function RadixContent() {
@@ -134,7 +134,7 @@ export default function RadixContent() {
 
   return (
     <Box>
-      <Typography variant="h5" sx={{ mb: 2 }}>{t('Tools.Radix.Name')}</Typography>
+      <Typography variant='h5' sx={{ mb: 2 }}>{t('Tools.Radix.Name')}</Typography>
 
       <Box sx={{ display: 'grid', gridTemplateColumns: { xs: '1fr', md: '1fr 1fr' }, gap: 2 }}>
         {[{
@@ -162,7 +162,7 @@ export default function RadixContent() {
           onChange: (v: string) => convertFrom('hex', v),
           error: errors.hex
         }].map((f) => (
-          <FieldRow
+          <RadixFieldRow
             key={f.key}
             label={f.label}
             value={f.value}

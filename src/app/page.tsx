@@ -1,4 +1,4 @@
-"use client";
+'use client';
 
 import { Box, List, ListItemButton, ListItemText, Paper } from '@mui/material';
 import Link from 'next/link';

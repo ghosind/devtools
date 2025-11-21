@@ -1,22 +1,22 @@
-import MongoDBObjectIdContent from "./content";
+import MongoDBContent from "./content";
 import en from '@/translations/en.json';
 
 export const metadata = {
-  title: en.Tools.MongoDBObjectID.Name,
-  description: en.Tools.MongoDBObjectID.Description,
-  keywords: ['devtools', 'mongodb', 'objectid'],
+  title: en.Tools.MongoDB.Name,
+  description: en.Tools.MongoDB.Description,
+  keywords: ['devtools', 'MongoDB', 'ObjectId', 'timestamp', 'datetime'],
   openGraph: {
-    title: en.Tools.MongoDBObjectID.Name,
-    description: en.Tools.MongoDBObjectID.Description
+    title: en.Tools.MongoDB.Name,
+    description: en.Tools.MongoDB.Description
   },
   twitter: {
-    title: en.Tools.MongoDBObjectID.Name,
-    description: en.Tools.MongoDBObjectID.Description
+    title: en.Tools.MongoDB.Name,
+    description: en.Tools.MongoDB.Description
   },
 };
 
-export default function MongoDBObjectIDPage() {
+export default function MongoDBPage() {
   return (
-    <MongoDBObjectIdContent />
+    <MongoDBContent />
   );
 }

@@ -1,6 +1,6 @@
-"use client";
+'use client';
 
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { AppBar, Toolbar, Typography, Link, IconButton } from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
 import NextLink from 'next/link';
@@ -13,13 +13,13 @@ export default function Header() {
 
   return (
     <>
-      <AppBar position="static">
+      <AppBar position='static'>
         <Toolbar>
-          <IconButton color="inherit" edge="start" onClick={() => setOpen(true)} sx={{ mr: 2 }}>
+          <IconButton color='inherit' edge='start' onClick={() => setOpen(true)} sx={{ mr: 2 }}>
             <MenuIcon />
           </IconButton>
-          <Typography variant="h6" style={{ flex: 1 }}>
-            <Link href="/" color="inherit" underline="none" component={NextLink}>
+          <Typography variant='h6' style={{ flex: 1 }}>
+            <Link href='/' color='inherit' underline='none' component={NextLink}>
               DevTools
             </Link>
           </Typography>

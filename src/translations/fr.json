@@ -8,6 +8,7 @@
   "Output": "Sortie",
   "Run": "Exécuter",
   "Verify": "Vérifier",
+  "Reset": "Réinitialiser",
   "Copy": "Copier",
   "Copied": "Copié",
   "Tools": {
@@ -42,11 +43,10 @@
         "Start": "Datetime de départ",
         "End": "Datetime de fin",
         "Result": "Différence",
-        "Clear": "Effacer",
         "Days": "jours"
       }
     },
-    "MongoDBObjectID": {
+    "MongoDB": {
       "Name": "Outillage pour ObjectID MongoDB",
       "Description": "Outillage pour ObjectID MongoDB, supportant la conversion entre ObjectID et le temps correspondant.",
       "Tabs": {
@@ -54,14 +54,12 @@
         "Generate": "Générer"
       },
       "Extract": {
-        "Title": "ObjectID vers Temps",
         "Input": "ObjectID",
         "OutputUTC": "Sortie (UTC)",
         "OutputLocal": "Sortie (Locale)",
         "OutputTimestamp": "Timestamp (s)"
       },
       "Generate": {
-        "Title": "Datetime UTC vers ObjectID",
         "Input": "Datetime (UTC)",
         "Output": "Sortie (ObjectID)"
       },

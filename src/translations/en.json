@@ -8,6 +8,7 @@
   "Output": "Output",
   "Run": "Run",
   "Verify": "Verify",
+  "Reset": "Reset",
   "Copy": "Copy",
   "Copied": "Copied",
   "Tools": {
@@ -42,11 +43,10 @@
         "Start": "Start Datetime",
         "End": "End Datetime",
         "Result": "Difference",
-        "Clear": "Clear",
         "Days": "days"
       }
     },
-    "MongoDBObjectID": {
+    "MongoDB": {
       "Name": "MongoDB ObjectID tools",
       "Description": "MongoDB ObjectID tools, supporting conversion between ObjectID and corresponding time.",
       "Tabs": {
@@ -54,14 +54,12 @@
         "Generate": "Generate"
       },
       "Extract": {
-        "Title": "ObjectID to Time",
         "Input": "ObjectID",
         "OutputUTC": "Output (UTC)",
         "OutputLocal": "Output (Local)",
         "OutputTimestamp": "Timestamp (s)"
       },
       "Generate": {
-        "Title": "UTC Datetime to ObjectID",
         "Input": "Datetime (UTC)",
         "Output": "Output (ObjectID)"
       },

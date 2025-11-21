@@ -1,6 +1,6 @@
-"use client";
+'use client';
 
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Box, Typography, Paper, Divider, TextField } from '@mui/material';
 import { useLang } from '@/components/LanguageProvider';
 import { parseUserAgent, UAResult } from '@/utils/userAgent';
@@ -20,7 +20,7 @@ export default function UserAgentContent() {
     }
   }, [currentUA]);
 
-  function handleChange(value: string) {
+  const handleChange = (value: string) => {
     setUa(value);
     try {
       setInfo(parseUserAgent(value));
@@ -31,7 +31,7 @@ export default function UserAgentContent() {
 
   return (
     <Box>
-      <Typography variant="h5" sx={{ mb: 2 }}>{t('Tools.UserAgent.Name')}</Typography>
+      <Typography variant='h5' sx={{ mb: 2 }}>{t('Tools.UserAgent.Name')}</Typography>
 
       <Box sx={{ display: 'flex', gap: 1, mb: 1 }}>
         <TextField
@@ -43,17 +43,23 @@ export default function UserAgentContent() {
       </Box>
 
       {info && (
-        <Paper variant="outlined" sx={{ p: 2 }}>
-          <Typography variant="h6">{t('Tools.UserAgent.Browser')}</Typography>
-          <Typography>{t(info.browser.name)}{info.browser.version ? ` — ${info.browser.version}` : ''}</Typography>
+        <Paper variant='outlined' sx={{ p: 2 }}>
+          <Typography variant='h6'>{t('Tools.UserAgent.Browser')}</Typography>
+          <Typography>
+            {t(info.browser.name)}{info.browser.version ? ` — ${info.browser.version}` : ''}
+          </Typography>
           <Divider sx={{ my: 1 }} />
 
-          <Typography variant="h6">{t('Tools.UserAgent.OS')}</Typography>
-          <Typography>{t(info.os.name)}{info.os.version ? ` — ${info.os.version}` : ''}</Typography>
+          <Typography variant='h6'>{t('Tools.UserAgent.OS')}</Typography>
+          <Typography>
+            {t(info.os.name)}{info.os.version ? ` — ${info.os.version}` : ''}
+          </Typography>
           <Divider sx={{ my: 1 }} />
 
-          <Typography variant="h6">{t('Tools.UserAgent.Device')}</Typography>
-          <Typography>{t(info.device.type)}{info.device.model ? ` — ${info.device.model}` : ''}</Typography>
+          <Typography variant='h6'>{t('Tools.UserAgent.Device')}</Typography>
+          <Typography>
+            {t(info.device.type)}{info.device.model ? ` — ${info.device.model}` : ''}
+          </Typography>
         </Paper>
       )}
     </Box>
