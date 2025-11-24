@@ -3,11 +3,11 @@
 import { useState } from 'react';
 import { Box, Typography, TextField, Alert } from '@mui/material';
 import { useLang } from '@/components/LanguageProvider';
-import { parseJwt, verifyHs256, verifyRs256 } from '@/utils/jwt';
+import { verifyHS256 } from '@/utils/crypto';
+import { parseJwt } from '@/utils/jwt';
 
 const supportedAlgorithms = new Map([
-  ['HS256', verifyHs256],
-  ['RS256', verifyRs256],
+  ['HS256', verifyHS256],
 ])
 
 export default function JwtContent() {
@@ -60,13 +60,14 @@ export default function JwtContent() {
         return;
       }
 
-      const res = await verifier(key, signingInput, sig);
-      if (!res || !res.ok) {
+      const ok = await verifier(key, signingInput, sig);
+      if (!ok) {
         setVerifyResult(t('Tools.JWT.Verify.Failure'));
       } else {
         setVerifyResult(t('Tools.JWT.Verify.Success'));
       }
     } catch (e: any) {
+      setVerifyResult(t('Tools.JWT.Verify.Failure'));
       setError(String(e?.message ?? e));
     }
   }

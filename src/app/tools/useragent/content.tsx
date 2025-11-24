@@ -3,7 +3,7 @@
 import { useEffect, useState } from 'react';
 import { Box, Typography, Paper, Divider, TextField } from '@mui/material';
 import { useLang } from '@/components/LanguageProvider';
-import { parseUserAgent, UAResult } from '@/utils/userAgent';
+import { parseUserAgent, UAResult } from '@/utils/browser';
 
 export default function UserAgentContent() {
   const { t } = useLang();
