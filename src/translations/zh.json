@@ -19,6 +19,13 @@
         "InvalidInput": "无效输入：{msg}"
       }
     },
+    "URL": {
+      "Name": "URL 编码/解码",
+      "Description": "对 URL 组件进行编码和解码。",
+      "Errors": {
+        "InvalidInput": "无效输入：{msg}"
+      }
+    },
     "Time": {
       "Name": "时间计算工具",
       "Description": "时间计算工具，包括时间戳转换、日期计算等",

@@ -19,6 +19,13 @@
         "InvalidInput": "Entrée invalide : {msg}"
       }
     },
+    "URL": {
+      "Name": "Encodeur/Décodeur d'URL",
+      "Description": "Encoder et décoder les composants d'URL.",
+      "Errors": {
+        "InvalidInput": "Entrée invalide: {msg}"
+      }
+    },
     "Time": {
       "Name": "Outils de calcul du temps",
       "Description": "Outils de calcul du temps incluant la conversion de timestamps, les calculs de dates, et plus encore.",
