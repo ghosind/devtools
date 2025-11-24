@@ -31,7 +31,19 @@
       "Description": "Outils de calcul du temps incluant la conversion de timestamps, les calculs de dates, et plus encore.",
       "Tabs": {
         "Timestamp": "Timestamp",
-        "DaysBetween": "Jours entre"
+        "DaysBetween": "Jours entre",
+        "Calculate": "Ajouter/Soustraire du temps"
+      },
+      "Calculate": {
+        "Title": "Ajouter ou soustraire du temps",
+        "Input": "Datetime (UTC)",
+        "Add": "Ajouter",
+        "Subtract": "Soustraire",
+        "OutputUTC": "Sortie (UTC)",
+        "OutputLocal": "Sortie (Locale)",
+        "Errors": {
+          "InvalidInput": "Entrée invalide : {msg}"
+        }
       },
       "Timestamp": {
         "TimestampToHuman": "Timestamp vers format lisible",

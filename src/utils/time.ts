@@ -15,7 +15,7 @@ export const formatDate = (d: Date, useUTC = false) => {
   return `${year}-${pad2(month)}-${pad2(day)} ${pad2(hours)}:${pad2(minutes)}:${pad2(seconds)}`;
 };
 
-export const timestampToHumanDatetime = (ts: string) => {
+export const timestampToHumanDatetime = (ts: string | number) => {
   const n = Number(ts);
   if (Number.isNaN(n)) {
     throw new Error('Invalid timestamp');

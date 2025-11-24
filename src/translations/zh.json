@@ -31,7 +31,19 @@
       "Description": "时间计算工具，包括时间戳转换、日期计算等",
       "Tabs": {
         "Timestamp": "时间戳",
-        "DaysBetween": "相差天数"
+        "DaysBetween": "相差天数",
+        "Calculate": "增加/减少 时间"
+      },
+      "Calculate": {
+        "Title": "增加或减少时间",
+        "Input": "日期时间（UTC）",
+        "Add": "增加",
+        "Subtract": "减少",
+        "OutputUTC": "输出（UTC）",
+        "OutputLocal": "输出（本地）",
+        "Errors": {
+          "InvalidInput": "无效输入：{msg}"
+        }
       },
       "Timestamp": {
         "TimestampToHuman": "时间戳转为可读格式",
