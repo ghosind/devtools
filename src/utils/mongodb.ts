@@ -19,13 +19,13 @@ export const parseObjectIdToDate = (id: string) => {
 export const generateObjectIdFromDate = (d: Date) => {
   // timestamp (4 bytes) + 16 hex padding chars
   const seconds = Math.floor(Date.UTC(
-    d.getUTCFullYear(),
-    d.getUTCMonth(),
-    d.getUTCDate(),
-    d.getUTCHours(),
-    d.getUTCMinutes(),
-    d.getUTCSeconds(),
-    d.getUTCMilliseconds()
+    d.getFullYear(),
+    d.getMonth(),
+    d.getDate(),
+    d.getHours(),
+    d.getMinutes(),
+    d.getSeconds(),
+    d.getMilliseconds()
   ) / 1000);
   const tsHex = seconds.toString(16).padStart(8, '0');
   return (tsHex + '0000000000000000').toLowerCase();
