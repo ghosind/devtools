@@ -117,6 +117,16 @@
         "UnsupportedAlg": "Algorithme non pris en charge pour la vérification"
       }
     },
+    "Hash": {
+      "Name": "Générateur de Hash",
+      "Description": "Générer des hachages avec MD5, la famille SHA et HMAC.",
+      "Algorithm": "Algorithme",
+      "HMAC": "HMAC",
+      "Key": "Clé",
+      "Errors": {
+        "UnsupportedHMAC": "HMAC avec cet algorithme n'est pas pris en charge dans le navigateur"
+      }
+    },
     "UserAgent": {
       "Name": "Inspecteur UserAgent",
       "Description": "Analyse l'UserAgent pour extraire le navigateur, le système et l'appareil.",

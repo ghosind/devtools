@@ -117,6 +117,16 @@
         "UnsupportedAlg": "Unsupported algorithm for verification"
       }
     },
+    "Hash": {
+      "Name": "Hash Generator",
+      "Description": "Generate hashes using MD5, SHA family and HMAC.",
+      "Algorithm": "Algorithm",
+      "HMAC": "HMAC",
+      "Key": "Key",
+      "Errors": {
+        "UnsupportedHMAC": "HMAC with this algorithm is not supported in browser"
+      }
+    },
     "UserAgent": {
       "Name": "User-Agent Inspector",
       "Description": "Parse browser UserAgent to extract browser, OS and device information.",

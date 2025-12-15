@@ -29,6 +29,11 @@ export const tools = [{
   description: 'Tools.JWT.Description',
   href: '/tools/jwt'
  }, {
+  key: 'hash',
+  title: 'Tools.Hash.Name',
+  description: 'Tools.Hash.Description',
+  href: '/tools/hash'
+ }, {
   key: 'useragent',
   title: 'Tools.UserAgent.Name',
   description: 'Tools.UserAgent.Description',

@@ -118,6 +118,16 @@
         "UnsupportedAlg": "不支持的验证算法"
       }
     },
+    "Hash": {
+      "Name": "哈希生成器",
+      "Description": "使用 MD5、SHA 系列和 HMAC 生成哈希值。",
+      "Algorithm": "算法",
+      "HMAC": "HMAC",
+      "Key": "密钥",
+      "Errors": {
+        "UnsupportedHMAC": "浏览器中不支持该算法的 HMAC"
+      }
+    },
     "UserAgent": {
       "Name": "UserAgent 检查器",
       "Description": "解析浏览器的UserAgent，提取浏览器、操作系统和设备信息。",
