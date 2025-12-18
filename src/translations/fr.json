@@ -11,6 +11,8 @@
   "Reset": "Réinitialiser",
   "Copy": "Copier",
   "Copied": "Copié",
+  "Generate": "Générer",
+  "Download": "Télécharger",
   "Tools": {
     "Base64": {
       "Name": "Encodeur/Décodeur Base64",
@@ -125,6 +127,19 @@
       "Key": "Clé",
       "Errors": {
         "UnsupportedHMAC": "HMAC avec cet algorithme n'est pas pris en charge dans le navigateur"
+      }
+    },
+    "QRCode": {
+      "Name": "Générateur de QR Code",
+      "Description": "Générer des QR codes depuis du texte ou des URL.",
+      "ErrorCorrection": "Correction d'erreur",
+      "Size": "Taille (px)",
+      "Format": "Format",
+      "ErrorCorrections": {
+        "Low": "Faible (7%)",
+        "Medium": "Moyenne (15%)",
+        "Quartile": "Quartile (25%)",
+        "High": "Élevée (30%)"
       }
     },
     "UserAgent": {

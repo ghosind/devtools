@@ -11,6 +11,8 @@
   "Reset": "重置",
   "Copy": "复制",
   "Copied": "已复制",
+  "Generate": "生成",
+  "Download": "下载",
   "Tools": {
     "Base64": {
       "Name": "Base64 编码/解码器",
@@ -126,6 +128,19 @@
       "Key": "密钥",
       "Errors": {
         "UnsupportedHMAC": "浏览器中不支持该算法的 HMAC"
+      }
+    },
+    "QRCode": {
+      "Name": "二维码生成器",
+      "Description": "从文本或 URL 生成二维码。",
+      "ErrorCorrection": "容错等级",
+      "Size": "大小 (像素)",
+      "Format": "格式",
+      "ErrorCorrections": {
+        "Low": "低 (7%)",
+        "Medium": "中 (15%)",
+        "Quartile": "四分之一 (25%)",
+        "High": "高 (30%)"
       }
     },
     "UserAgent": {
