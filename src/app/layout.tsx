@@ -10,6 +10,9 @@ export const metadata = {
     default: en.Name,
     template: `%s - ${en.Name}`
   },
+  icons: {
+    icon: '/favicon.ico',
+  },
   description: 'DevTools — free online developer utilities: Base64, JWT, Hash, QRCode, MongoDB ObjectID tools, URL and time converters.',
   keywords: [
     'devtools',
