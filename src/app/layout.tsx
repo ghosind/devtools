@@ -10,14 +10,22 @@ export const metadata = {
     default: en.Name,
     template: `%s - ${en.Name}`
   },
-  description: en.Description,
-  keywords: ['devtools'],
+  description: 'DevTools — free online developer utilities: Base64, JWT, Hash, QRCode, MongoDB ObjectID tools, URL and time converters.',
+  keywords: [
+    'devtools',
+    'developer tools',
+    'online developer tools',
+    'encode decode tools',
+    'utility tools',
+    'web utilities',
+    'developer utilities'
+  ],
   openGraph: {
     title: {
       default: en.Name,
       template: `%s - ${en.Name}`
     },
-    description: en.Description
+    description: 'DevTools — free online developer utilities: Base64, JWT, Hash, QRCode, MongoDB ObjectID tools, URL and time converters.'
   },
   twitter: {
     card: 'summary_large_image',
@@ -25,7 +33,7 @@ export const metadata = {
       default: en.Name,
       template: `%s - ${en.Name}`
     },
-    description: en.Description,
+    description: 'DevTools — free online developer utilities: Base64, JWT, Hash, QRCode, MongoDB ObjectID tools, URL and time converters.',
   },
   robots: {
     index: true,
