@@ -14,6 +14,13 @@
   "Generate": "Générer",
   "Download": "Télécharger",
   "Tools": {
+    "Base32": {
+      "Name": "Encodeur/Décodeur Base32",
+      "Description": "Encoder et décoder du texte avec le schéma d'encodage Base32.",
+      "Errors": {
+        "InvalidInput": "Entrée invalide : {msg}"
+      }
+    },
     "Base64": {
       "Name": "Encodeur/Décodeur Base64",
       "Description": "Encoder et décoder du texte avec le schéma d'encodage Base64.",

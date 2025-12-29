@@ -14,6 +14,13 @@
   "Generate": "生成",
   "Download": "下载",
   "Tools": {
+    "Base32": {
+      "Name": "Base32 编码/解码器",
+      "Description": "使用 Base32 编码方案对文本进行编码和解码。",
+      "Errors": {
+        "InvalidInput": "无效输入：{msg}"
+      }
+    },
     "Base64": {
       "Name": "Base64 编码/解码器",
       "Description": "使用 Base64 编码方案对文本进行编码和解码。",

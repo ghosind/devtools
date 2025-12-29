@@ -1,4 +1,9 @@
 export const tools = [{
+  key: 'base32',
+  title: 'Tools.Base32.Name',
+  description: 'Tools.Base32.Description',
+  href: '/tools/base32'
+}, {
   key: 'base64',
   title: 'Tools.Base64.Name',
   description: 'Tools.Base64.Description',
