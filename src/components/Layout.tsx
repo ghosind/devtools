@@ -9,7 +9,6 @@ export default function Layout({ children }: { children: React.ReactNode }) {
     <div>
       <Header />
       <Container
-        className='container'
         sx={{
           paddingTop: 4,
           paddingBottom: `calc(${FOOTER_HEIGHT + 24}px + env(safe-area-inset-bottom))`,
