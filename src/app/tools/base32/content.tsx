@@ -1,35 +1,29 @@
 'use client';
 
 import { Base32Encoding } from '@antmind/encoding';
-import { useState } from 'react';
-import { Box, TextField, Typography, Button, ToggleButtonGroup, ToggleButton } from '@mui/material';
+import { useMemo, useState } from 'react';
+import {
+  Box, TextField, Typography, Button, ToggleButtonGroup, ToggleButton,
+} from '@mui/material';
 import { useLang } from '@/components/LanguageProvider';
 import CopyButton from '@/components/CopyButton';
 
 type Mode = 'encode' | 'decode';
 
 export default function Base32Content() {
-  const base32 = new Base32Encoding();
+  const base32 = useMemo(() => new Base32Encoding(), []);
   const { t } = useLang();
   const [input, setInput] = useState('');
   const [output, setOutput] = useState('');
   const [outputError, setOutputError] = useState('');
   const [mode, setMode] = useState<Mode>('encode');
 
-  const encodeBase32 = (data: string) => {
-    return base32.encode(data);
-  }
-
-  const decodeBase32 = (data: string) => {
-    return base32.decode(data);
-  }
-
   const handleRun = () => {
     setOutput('');
     setOutputError('');
 
     try {
-      const res = mode === 'encode' ? encodeBase32(input) : decodeBase32(input);
+      const res = mode === 'encode' ? base32.encode(input) : base32.decode(input);
       setOutput(res);
     } catch (e) {
       const msg = String((e as any)?.message ?? e);

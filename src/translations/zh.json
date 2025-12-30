@@ -150,6 +150,18 @@
         "High": "高 (30%)"
       }
     },
+    "TOTP": {
+      "Name": "TOTP 生成器",
+      "Description": "生成基于时间的一次性密码（TOTP）。",
+      "Secret": "密钥",
+      "SecretHelper": "输入原始共享密钥。",
+      "Algorithm": "算法",
+      "Digits": "位数",
+      "Period": "周期（秒）",
+      "PeriodHelper": "时间步长（秒），通常为 30。",
+      "Remaining": "剩余",
+      "Refresh": "刷新"
+    },
     "UserAgent": {
       "Name": "UserAgent 检查器",
       "Description": "解析浏览器的UserAgent，提取浏览器、操作系统和设备信息。",

@@ -149,6 +149,18 @@
         "High": "Élevée (30%)"
       }
     },
+    "TOTP": {
+      "Name": "Générateur TOTP",
+      "Description": "Génère des codes TOTP (mot de passe à usage unique basé sur le temps).",
+      "Secret": "Secret",
+      "SecretHelper": "Entrez le secret partagé brute.",
+      "Algorithm": "Algorithme",
+      "Digits": "Chiffres",
+      "Period": "Période (secondes)",
+      "PeriodHelper": "Pas de temps en secondes (généralement 30).",
+      "Remaining": "Restant",
+      "Refresh": "Rafraîchir"
+    },
     "UserAgent": {
       "Name": "Inspecteur UserAgent",
       "Description": "Analyse l'UserAgent pour extraire le navigateur, le système et l'appareil.",

@@ -44,6 +44,11 @@ export const tools = [{
   description: 'Tools.QRCode.Description',
   href: '/tools/qrcode'
  }, {
+  key: 'totp',
+  title: 'Tools.TOTP.Name',
+  description: 'Tools.TOTP.Description',
+  href: '/tools/totp'
+ }, {
   key: 'useragent',
   title: 'Tools.UserAgent.Name',
   description: 'Tools.UserAgent.Description',

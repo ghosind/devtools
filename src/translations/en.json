@@ -149,6 +149,18 @@
         "High": "High (30%)"
       }
     },
+    "TOTP": {
+      "Name": "TOTP Generator",
+      "Description": "Generate TOTP codes (Time-based One-Time Password).",
+      "Secret": "Secret",
+      "SecretHelper": "Enter raw shared secret.",
+      "Algorithm": "Algorithm",
+      "Digits": "Digits",
+      "Period": "Period (seconds)",
+      "PeriodHelper": "Time step in seconds (usually 30).",
+      "Remaining": "Remaining",
+      "Refresh": "Refresh"
+    },
     "UserAgent": {
       "Name": "User-Agent Inspector",
       "Description": "Parse browser UserAgent to extract browser, OS and device information.",
