@@ -41,7 +41,17 @@
       "Tabs": {
         "Timestamp": "Timestamp",
         "DaysBetween": "Jours entre",
-        "Calculate": "Ajouter/Soustraire du temps"
+        "Calculate": "Ajouter/Soustraire du temps",
+        "Timezone": "Fuseau horaire"
+      },
+      "Timezone": {
+        "Title": "Conversion de fuseau horaire",
+        "Input": "Datetime",
+        "Source": "Fuseau source",
+        "Target": "Fuseau cible",
+        "Local": "Local (navigateur)",
+        "Output": "Converti",
+        "Timestamp": "Timestamp (s)"
       },
       "Calculate": {
         "Title": "Ajouter ou soustraire du temps",

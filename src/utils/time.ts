@@ -35,7 +35,6 @@ export const humanDatetimeToTimestamp = (d: Date | null) => {
     throw new Error('Invalid date');
   }
 
-  // Interpret the selected date as UTC (take its components and build a UTC timestamp)
   const ms = Date.UTC(
     d.getFullYear(),
     d.getMonth(),
@@ -47,3 +46,84 @@ export const humanDatetimeToTimestamp = (d: Date | null) => {
   );
   return String(Math.floor(ms / 1000));
 }
+
+const getTimeZoneParts = (epochMs: number, tz: string) => {
+  const fmt = new Intl.DateTimeFormat('en-CA', {
+    timeZone: tz,
+    hour12: false,
+    year: 'numeric',
+    month: 'numeric',
+    day: 'numeric',
+    hour: 'numeric',
+    minute: 'numeric',
+    second: 'numeric',
+  });
+  const parts = fmt.formatToParts(new Date(epochMs));
+  const map: Record<string, string> = {};
+  for (const p of parts) {
+    if (p.type !== 'literal') map[p.type] = p.value;
+  }
+
+  return {
+    year: Number(map.year),
+    month: Number(map.month),
+    day: Number(map.day),
+    hour: Number(map.hour),
+    minute: Number(map.minute),
+    second: Number(map.second),
+  };
+};
+
+const compareParts = (a: any, b: any) => {
+  if (a.year !== b.year) {
+    return a.year - b.year;
+  }
+  if (a.month !== b.month) {
+    return a.month - b.month;
+  }
+  if (a.day !== b.day) {
+    return a.day - b.day;
+  }
+  if (a.hour !== b.hour) {
+    return a.hour - b.hour;
+  }
+  if (a.minute !== b.minute) {
+    return a.minute - b.minute;
+  }
+  return a.second - b.second;
+};
+
+export const findEpochForZonedWallClock = (
+  year: number,
+  month: number,
+  day: number,
+  hour: number,
+  minute: number,
+  second: number,
+  tz: string,
+) => {
+  const center = Date.UTC(year, month - 1, day, hour, minute, second);
+  let low = center - 48 * 3600 * 1000;
+  let high = center + 48 * 3600 * 1000;
+
+  for (let i = 0; i < 64; i++) {
+    const mid = Math.floor((low + high) / 2);
+    const p = getTimeZoneParts(mid, tz);
+    const cmp = compareParts(p, { year, month, day, hour, minute, second });
+    if (cmp === 0) {
+      return mid;
+    } else if (cmp < 0) {
+      low = mid + 1;
+    } else {
+      high = mid - 1;
+    }
+  }
+
+  throw new Error('Unable to resolve zoned time for provided wall-clock and timezone');
+};
+
+export const formatEpochInTimeZone = (epochMs: number, tz: string) => {
+  const p = getTimeZoneParts(epochMs, tz);
+  const pad2 = (n: number) => String(n).padStart(2, '0');
+  return `${p.year}-${pad2(p.month)}-${pad2(p.day)} ${pad2(p.hour)}:${pad2(p.minute)}:${pad2(p.second)} (${tz})`;
+};

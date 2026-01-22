@@ -41,7 +41,16 @@
       "Tabs": {
         "Timestamp": "Timestamp",
         "DaysBetween": "Days Between",
-        "Calculate": "Add/Subtract Time"
+        "Calculate": "Add/Subtract Time",
+        "Timezone": "Timezone"
+      },
+      "Timezone": {
+        "Title": "Timezone Convert",
+        "Input": "Datetime",
+        "Source": "Source Timezone",
+        "Target": "Target Timezone",
+        "Local": "Local (browser)",
+        "Output": "Converted"
       },
       "Calculate": {
         "Title": "Add or Subtract Time",

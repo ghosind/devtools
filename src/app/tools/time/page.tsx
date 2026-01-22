@@ -3,7 +3,7 @@ import en from '@/translations/en.json';
 
 export const metadata = {
   title: en.Tools.Time.Name,
-  description: 'Convert timestamps and perform date calculations — timestamp to human date, date to timestamp, add/subtract time, and calculate ranges.',
+  description: 'Convert timestamps and perform date calculations — timestamp to human date, date to timestamp, add/subtract time, calculate ranges, and time zone conversion.',
   keywords: [
     'devtools',
     'time converter',
@@ -30,15 +30,16 @@ export const metadata = {
     'convert epoch time',
     'timestamp to human date',
     'human date to timestamp',
+    'time zone conversion',
   ],
   openGraph: {
     title: en.Tools.Time.Name,
-    description: 'Convert timestamps and perform date calculations — timestamp to human date, date to timestamp, add/subtract time, and calculate ranges.'
+    description: 'Convert timestamps and perform date calculations — timestamp to human date, date to timestamp, add/subtract time, calculate ranges, and time zone conversion.',
   },
   twitter: {
     card: 'summary_large_image',
     title: en.Tools.Time.Name,
-    description: 'Convert timestamps and perform date calculations — timestamp to human date, date to timestamp, add/subtract time, and calculate ranges.'
+    description: 'Convert timestamps and perform date calculations — timestamp to human date, date to timestamp, add/subtract time, calculate ranges, and time zone conversion.'
   },
 };
 

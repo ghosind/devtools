@@ -41,7 +41,17 @@
       "Tabs": {
         "Timestamp": "时间戳",
         "DaysBetween": "相差天数",
-        "Calculate": "增加/减少 时间"
+        "Calculate": "增加/减少 时间",
+        "Timezone": "时区转换"
+      },
+      "Timezone": {
+        "Title": "时区转换",
+        "Input": "日期时间",
+        "Source": "源时区",
+        "Target": "目标时区",
+        "Local": "本地（浏览器）",
+        "Output": "转换结果",
+        "Timestamp": "时间戳（秒）"
       },
       "Calculate": {
         "Title": "增加或减少时间",
