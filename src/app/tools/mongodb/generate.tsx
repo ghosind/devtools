@@ -14,11 +14,12 @@ export default function ObjectIDGenerateTab() {
   const [genObjId, setGenObjId] = useState('');
 
   const handleRun = () => {
-    if (!genDate) {
-      setGenOid(t('Tools.MongoDB.Errors.InvalidDate'));
-      return;
+    let date = genDate;
+    if (!date) {
+      // If no datetime is selected, use the current datetime
+      date = new Date();
     }
-    const oid = generateObjectIdFromDate(genDate);
+    const oid = generateObjectIdFromDate(date);
     setGenOid(oid);
     setGenObjId(`ObjectId("${oid}")`);
   }
